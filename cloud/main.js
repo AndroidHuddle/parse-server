@@ -1,13 +1,19 @@
 Parse.Cloud.define('sendToUser', function(req, res) {
+  var params = request.params;
+
+  var message = params.message;
+  var user = params.user;
+  var title = params.title;
+
   var query = new Parse.Query(Parse.Installation);
-  query.equalTo('user', 'badhri');
+  query.equalTo('user', user);
 
   Parse.Push.send({
     where: query,
     data: {
-      alert: 'Test',
+      alert: title,
       sound: 'default',
-      title: "The Shining"
+      title: message
     }
   }, {
     success: function() {
