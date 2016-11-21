@@ -2,7 +2,7 @@ Parse.Cloud.define('sendToUser', function(req, res) {
   var params = request.params;
 
   var message = "New friend request";
-  var userid = "badhri"
+  var userid = "badhri";
   var titleString = "Parse";
 
   var query = new Parse.Query(Parse.Installation);
