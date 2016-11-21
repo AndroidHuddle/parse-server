@@ -25,3 +25,24 @@ Parse.Cloud.define('sendToUser', function(req, res) {
 Parse.Cloud.define('hello', function(req, res) {
   res.success('Hi');
 });
+
+Parse.Cloud.define('sendToChannel', function(req, res) {
+  Parse.Push.send({
+    channels: ['abcd'],
+    data: {
+      alert: 'Test',
+      sound: 'default',
+      title: "The Shining"
+    }
+  }, {
+    success: function() {
+      console.log('##### PUSH OK');
+      res.success('Hi');
+    },
+    error: function(error) {
+      console.log('##### PUSH ERROR');
+      res.success('fail' + error);
+    },
+    useMasterKey: true
+  });
+});
