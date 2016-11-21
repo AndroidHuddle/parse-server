@@ -1,19 +1,14 @@
 Parse.Cloud.define('sendToUser', function(req, res) {
-  var params = request.params;
-
-  var message = "New friend request";
-  var userid = "badhri";
-  var titleString = "Parse";
 
   var query = new Parse.Query(Parse.Installation);
-  query.equalTo('user', userid);
+  query.equalTo('user', 'badhri');
 
   Parse.Push.send({
     where: query,
     data: {
-      alert: titleString,
+      alert: 'New friend request',
       sound: 'default',
-      title: message
+      title: 'Parse'
     }
   }, {
     success: function() {
