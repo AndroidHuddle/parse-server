@@ -17,7 +17,7 @@ Parse.Cloud.define('sendToUser', function(req, res) {
     },
     error: function(error) {
       console.log('##### PUSH ERROR');
-      res.success('Hi');
+      res.success('fail');
     },
     useMasterKey: true
   });
