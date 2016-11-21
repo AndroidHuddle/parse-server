@@ -7,7 +7,8 @@ Parse.Cloud.define('sendToUser', function(req, res) {
     data: {
       alert: 'Test',
       badge: 1,
-      sound: 'default'
+      sound: 'default',
+      title: "The Shining",
     }
   }, {
     success: function() {
