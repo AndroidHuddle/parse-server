@@ -6,7 +6,6 @@ Parse.Cloud.define('sendToUser', function(req, res) {
     where: query,
     data: {
       alert: 'Test',
-      badge: 1,
       sound: 'default',
       title: "The Shining"
     }
